@@ -55,23 +55,30 @@ The `AdminManager` contract is responsible for handling role assignments for bot
 
 Here’s the implementation of the AdminManager contract:
 ```
-contract AdminManager {
+contract AdminManager is AccessControl {
     MilestoneManager public milestoneManager;
     ProposalManager public proposalManager;
 
-    constructor(address _milestoneManager, address _proposalManager) {
+    constructor(
+        address initialAdmin,
+        address _milestoneManager,
+        address _proposalManager
+    ) {
+        _grantRole(DEFAULT_ADMIN_ROLE, initialAdmin);
         milestoneManager = MilestoneManager(_milestoneManager);
         proposalManager = ProposalManager(_proposalManager);
     }
 
-    function addStudentToBoth(address student) public {
-        milestoneManager.addStudent(student); // Assign student role in MilestoneManager
-        proposalManager.addStudent(student); // Assign student role in ProposalManager
+    function addStudent(address student) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        milestoneManager.addStudent(student);
+        proposalManager.addStudent(student);
     }
 
-    function addCommitteeToBoth(address committeeMember) public {
-        milestoneManager.addCommittee(committeeMember); // Assign committee role in MilestoneManager
-        proposalManager.addCommittee(committeeMember); // Assign committee role in ProposalManager
+    function addCommittee(
+        address committee
+    ) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        milestoneManager.addCommittee(committee);
+        proposalManager.addCommittee(committee);
     }
 }
 
