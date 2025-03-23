@@ -45,6 +45,7 @@ Key Features
 In this post, I'll demonstrate how to migrate a simple CRUD Spring Boot application built with Java 8, Spring Boot 2.x, and JUnit 4 to Java 21, Spring Boot 3.3, and JUnit 5 using OpenRewrite.
 
 ### Codebase
+**Checkout here: [GitHub](https://github.com/hgky95/TIL/tree/main/java-springboot-migration)**
 
 #### 1) pom.xml
 ```xml
