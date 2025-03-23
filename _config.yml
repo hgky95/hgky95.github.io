@@ -29,7 +29,7 @@ github:
   username: hgky95 # change to your GitHub username
 
 twitter:
-  username: ky_huynh42 # change to your Twitter username
+  username: kyhuynhvn # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -38,7 +38,7 @@ social:
   email: hgky95@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/ky_huynh42 # change to your Twitter homepage
+    - https://twitter.com/kyhuynhvn # change to your Twitter homepage
     - https://github.com/hgky95 # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
